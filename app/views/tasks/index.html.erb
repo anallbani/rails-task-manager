@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <h1 class="mb-4">My tasks</h1>
+  <ul class="list-group">
+    <% @tasks.each do |task| %>
+      <li class="list-group-item d-flex align-items-center">
+        <% if task.completed %>
+          <span class="me-2">✅</span>
+        <% else %>
+          <span class="me-2">⬜</span>
+        <% end %>
+        <%= task.title %>
+      </li>
+    <% end %>
+  </ul>
+</div>
