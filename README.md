@@ -1,24 +1,37 @@
-# README
+# Task Manager
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a tiny Rails application used to manage a list of tasks. The project is
+meant as a starting point for learning Rails and experimenting with the
+framework.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+First install the Ruby gems:
 
-* System dependencies
+```bash
+bundle install
+```
 
-* Configuration
+Create and seed the database (this will load a few example tasks defined in
+`db/seeds.rb`):
 
-* Database creation
+```bash
+rails db:setup
+```
 
-* Database initialization
+Start the development server:
 
-* How to run the test suite
+```bash
+rails server
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Open [http://localhost:3000/tasks](http://localhost:3000/tasks) in your browser
+to view the example tasks.
 
-* Deployment instructions
+## Running tests
 
-* ...
+The project uses Minitest. Execute the test suite with:
+
+```bash
+rails test
+```
