@@ -12,4 +12,6 @@
   <button class="btn btn-primary btn-toggle" data-action="task#toggle">Toggle Completion</button>
 </div>
 
-<%= link_to "Back to list", "/tasks" %>
+<%= link_to "Back to list", tasks_path %>
+<%= link_to "Edit", edit_task_path(@task), class: "btn btn-secondary ms-2" %>
+<%= link_to "Delete", task_path(@task), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger ms-2" %>
