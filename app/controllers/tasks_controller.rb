@@ -7,6 +7,15 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
+
+  def toggle
+    @task = Task.find(params[:id])
+    @task.update(completed: !@task.completed)
+    respond_to do |format|
+      format.json { render json: { completed: @task.completed } }
+    end
+  end
+
   def new
     @task = Task.new
   end
@@ -44,4 +53,5 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:title, :details, :completed)
   end
+
 end

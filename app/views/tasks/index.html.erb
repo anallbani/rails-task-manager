@@ -3,6 +3,13 @@
   <%= link_to "New Task", new_task_path, class: "btn btn-primary mb-3" %>
   <ul class="list-group">
     <% @tasks.each do |task| %>
+      <li class="list-group-item"
+          data-controller="task"
+          data-task-id-value="<%= task.id %>"
+          data-task-completed-value="<%= task.completed %>">
+        <span data-task-target="icon" class="me-2"><%= task.completed ? "✅" : "⬜" %></span>
+        <%= link_to task.title, task_path(task), class: "me-auto" %>
+        <button class="btn btn-sm btn-outline-primary btn-toggle" data-action="task#toggle">Toggle</button>
       <li class="list-group-item d-flex align-items-center">
         <% if task.completed %>
           <span class="me-2">✅</span>
