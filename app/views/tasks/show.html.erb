@@ -1,10 +1,15 @@
-<h1><%= @task.title %></h1>
-<p><%= @task.details %></p>
-
-<% if @task.completed %>
-  <p>✅ This task is completed</p>
-<% else %>
-  <p>❌ This task is not completed yet</p>
-<% end %>
+<div data-controller="task"
+     data-task-id-value="<%= @task.id %>"
+     data-task-completed-value="<%= @task.completed %>">
+  <h1>
+    <span data-task-target="icon"><%= @task.completed ? "✅" : "⬜" %></span>
+    <%= @task.title %>
+  </h1>
+  <p><%= @task.details %></p>
+  <p data-task-target="status">
+    <%= @task.completed ? "✅ This task is completed" : "❌ This task is not completed yet" %>
+  </p>
+  <button class="btn btn-primary btn-toggle" data-action="task#toggle">Toggle Completion</button>
+</div>
 
 <%= link_to "Back to list", "/tasks" %>
