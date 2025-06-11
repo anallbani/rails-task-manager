@@ -1,0 +1,22 @@
+body {
+  background-color: #fdf6e3;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+  padding: 20px;
+}
+
+h1, h2 {
+  color: #2c3e50;
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.btn-toggle {
+  margin-left: 1rem;
+}
