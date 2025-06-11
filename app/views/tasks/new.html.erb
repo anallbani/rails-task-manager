@@ -8,3 +8,8 @@
   <%= form.check_box :completed %>
   <%= form.submit %>
 <% end %>
+
+<%= render "form", task: @task %>
+
+<%= link_to "Back", tasks_path %>
+
