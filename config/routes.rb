@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get "tasks", to: "tasks#index"
-  get "tasks/:id", to: "tasks#show", as: :task
+  resources :tasks
 
   get "up" => "rails/health#show", as: :rails_health_check
 end
