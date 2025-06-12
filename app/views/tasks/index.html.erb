@@ -1,24 +1,22 @@
-<div class="container mt-5">
-  <h1 class="mb-4">My tasks</h1>
-  <%= link_to "New Task", new_task_path, class: "btn btn-primary mb-3" %>
-  <ul class="list-group">
+<div class="max-w-xl mx-auto">
+  <h1 class="text-2xl font-bold mb-4">My tasks</h1>
+  <%= link_to "New Task", new_task_path,
+              class: "inline-block mb-4 px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700" %>
+  <ul class="space-y-2">
     <% @tasks.each do |task| %>
-      <li class="list-group-item"
+      <li class="flex items-center justify-between p-3 bg-gray-100 rounded"
           data-controller="task"
           data-task-id-value="<%= task.id %>"
           data-task-completed-value="<%= task.completed %>">
-        <span data-task-target="icon" class="me-2"><%= task.completed ? "✅" : "⬜" %></span>
-        <%= link_to task.title, task_path(task), class: "me-auto" %>
-        <button class="btn btn-sm btn-outline-primary btn-toggle" data-action="task#toggle">Toggle</button>
-      <li class="list-group-item d-flex align-items-center">
-        <% if task.completed %>
-          <span class="me-2">✅</span>
-        <% else %>
-          <span class="me-2">⬜</span>
-        <% end %>
-        <%= link_to task.title, task_path(task), class: "me-2" %>
-        <%= link_to "Edit", edit_task_path(task), class: "btn btn-sm btn-secondary me-2" %>
-        <%= link_to "Delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-danger" %>
+        <div class="flex items-center">
+          <span data-task-target="icon" class="mr-2"><%= task.completed ? "✅" : "⬜" %></span>
+          <%= link_to task.title, task_path(task), class: "hover:underline" %>
+        </div>
+        <div class="flex items-center text-sm">
+          <%= link_to "Edit", edit_task_path(task), class: "text-blue-600 hover:text-blue-800 mr-2" %>
+          <%= link_to "Delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" }, class: "text-red-600 hover:text-red-800 mr-2" %>
+          <button class="text-gray-600 hover:text-gray-800" data-action="task#toggle">Toggle</button>
+        </div>
       </li>
     <% end %>
   </ul>
