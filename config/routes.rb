@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  root "pages#home"
 
-  get "tasks", to: "tasks#index"
-  get "tasks/:id", to: "tasks#show", as: :task
-  patch "tasks/:id/toggle", to: "tasks#toggle", as: :toggle_task
-  resources :tasks
-
-  root "tasks#index"
+  resources :tasks do
+    member do
+      patch :toggle
+    end
+  end
 
   get "up" => "rails/health#show", as: :rails_health_check
 end

@@ -25,5 +25,10 @@
     <%= form.label :completed, class: "form-check-label" %>
   </div>
 
+  <div class="mt-2">
+    <%= form.label :due_date %>
+    <%= form.date_field :due_date, class: "mt-1 p-2 w-full border rounded dark:bg-gray-800 dark:border-gray-700" %>
+  </div>
+
   <%= form.submit class: "btn btn-primary" %>
 <% end %>
