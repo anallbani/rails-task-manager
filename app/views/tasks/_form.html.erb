@@ -1,8 +1,8 @@
 <%= form_with(model: task) do |form| %>
   <% if task.errors.any? %>
-    <div class="alert alert-danger">
-      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
-      <ul>
+    <div class="mb-4 rounded bg-red-100 p-4">
+      <h2 class="font-bold mb-2"><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+      <ul class="list-disc pl-5 text-sm">
         <% task.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
@@ -10,20 +10,20 @@
     </div>
   <% end %>
 
-  <div class="mb-3">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: "form-control" %>
+  <div class="mb-4">
+    <%= form.label :title, class: "block font-medium" %>
+    <%= form.text_field :title, class: "mt-1 block w-full border-gray-300 rounded" %>
   </div>
 
-  <div class="mb-3">
-    <%= form.label :details %>
-    <%= form.text_area :details, class: "form-control" %>
+  <div class="mb-4">
+    <%= form.label :details, class: "block font-medium" %>
+    <%= form.text_area :details, class: "mt-1 block w-full border-gray-300 rounded" %>
   </div>
 
-  <div class="form-check mb-3">
-    <%= form.check_box :completed, class: "form-check-input" %>
-    <%= form.label :completed, class: "form-check-label" %>
+  <div class="mb-4 flex items-center">
+    <%= form.check_box :completed, class: "mr-2" %>
+    <%= form.label :completed %>
   </div>
 
-  <%= form.submit class: "btn btn-primary" %>
+  <%= form.submit class: "px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700" %>
 <% end %>
