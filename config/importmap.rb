@@ -11,8 +11,3 @@ pin "task_search"
 pin "hover3d"
 pin "motion"
 
-pin "motion"
-pin "hover3d"
-pin "task_toggle"
-pin "dark_mode"
-pin "task_search"
