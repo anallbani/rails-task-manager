@@ -25,6 +25,20 @@ Start the development server:
 rails server
 ```
 
+The application uses Tailwind CSS. In development you need the Tailwind watcher
+running so it compiles `app/assets/stylesheets/application.tailwind.css` into
+`app/assets/builds/tailwind.css`.
+
+You can run Rails and the Tailwind watcher together with:
+
+```bash
+# start Rails and Tailwind in development
+bin/dev
+```
+
+Alternatively, run `rails tailwindcss:watch` in a separate terminal while the
+Rails server is running.
+
 Open [http://localhost:3000/tasks](http://localhost:3000/tasks) in your browser
 to view the example tasks.
 
